@@ -2,9 +2,7 @@ package guru.springframework.repositories;
 
 import guru.springframework.bootstrap.RecipeBootstrap;
 import guru.springframework.domain.UnitOfMeasure;
-import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,8 +41,6 @@ public class UnitOfMeasureRepositoryIT {
         recipeBootstrap.onApplicationEvent(null);
     }
 
-
-
     @Test
     public void findByDescription() throws Exception {
 
@@ -59,11 +55,6 @@ public class UnitOfMeasureRepositoryIT {
         Optional<UnitOfMeasure> uomOptional = unitOfMeasureRepository.findByDescription("Cup");
 
         assertEquals("Cup", uomOptional.get().getDescription());
-    }
-
-    @After
-    public void cleanUp() {
-        recipeRepository.deleteAll();
     }
 
 }

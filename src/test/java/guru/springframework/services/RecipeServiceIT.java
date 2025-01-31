@@ -5,7 +5,6 @@ import guru.springframework.converters.RecipeCommandToRecipe;
 import guru.springframework.converters.RecipeToRecipeCommand;
 import guru.springframework.domain.Recipe;
 import guru.springframework.repositories.RecipeRepository;
-import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,11 +35,6 @@ public class RecipeServiceIT {
 
     @Autowired
     RecipeToRecipeCommand recipeToRecipeCommand;
-
-    @After
-    public void cleanUp() throws Exception {
-        recipeRepository.deleteAll();
-    }
 
   //  @Transactional
     @Test
